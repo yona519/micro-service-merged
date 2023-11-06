@@ -80,7 +80,7 @@ font-family: "Varela", sans-serif;
 }
 
 .custom-title {
-    height: 8%;
+    /* height: 8%; */
     padding: 1%;
     background-color: white;
     margin-bottom: 10px;
@@ -206,7 +206,7 @@ font-family: "Varela", sans-serif;
 }
 
 .employee-info{
-    height: 17%;
+    /* height: 17%; */
     padding: 1%;
     /* background-color: white; */
     /* border-radius: 20px; */
@@ -259,7 +259,7 @@ font-family: "Varela", sans-serif;
 }
 
 .project-info{
-    height: 17%;
+    /* height: 17%; */
     padding: 1%;
     /* background-color: white; */
     /* border-radius: 20px; */
