@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Sumana:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Varela&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+SC&family=Alegreya+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
 
 /* fonts
 font-family: 'Alegreya', serif;
@@ -152,8 +153,9 @@ font-family: "Varela", sans-serif;
     font-size: large;
     margin-top: 15px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-    border-radius: 5px;
-    font-family: 'Alegreya Sans', sans-serif;
+    border-radius: 5px;    
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 
@@ -189,7 +191,8 @@ font-family: "Varela", sans-serif;
     /* margin-top: 5px; */
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
     border-radius: 5px;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 .emp-value-container {
@@ -297,7 +300,8 @@ font-family: "Varela", sans-serif;
     display: flex;
     align-content: center;
     margin-top: -3.5px;
-    font-family: 'Alegreya Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+
     /* border: 1px solid black; */
 }
 
@@ -310,5 +314,22 @@ font-family: "Varela", sans-serif;
     color: white;
 }
 
-
+.breadcrumb {
+    --bs-breadcrumb-padding-x: 0;
+    --bs-breadcrumb-padding-y: 0;
+    --bs-breadcrumb-margin-bottom: 0;
+    --bs-breadcrumb-bg: ;
+    --bs-breadcrumb-border-radius: ;
+    --bs-breadcrumb-divider-color: var(--bs-secondary-color);
+    --bs-breadcrumb-item-padding-x: 0.5rem;
+    --bs-breadcrumb-item-active-color: var(--bs-secondary-color);
+    display: flex;
+    flex-wrap: wrap;
+    padding: var(--bs-breadcrumb-padding-y) var(--bs-breadcrumb-padding-x);
+    margin-bottom: var(--bs-breadcrumb-margin-bottom);
+    font-size: var(--bs-breadcrumb-font-size);
+    list-style: none;
+    background-color: var(--bs-breadcrumb-bg);
+    border-radius: var(--bs-breadcrumb-border-radius);
+}
 
