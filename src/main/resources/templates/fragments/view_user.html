@@ -4,15 +4,15 @@
     <div style="height: 100%; width: 100%; flex-direction: row; display: flex;">
 
         <!-- CARD 1 -->
-        <div class="card-container-profile">
-            <div class="card-container2">
-                <div class="profile-card">
-                    <div class="custom-title">
+        <div class="card-container-profile h-100 w-100 d-flex flex-column align-items-center">
+            <div class="card-container2 d-flex flex-column align-items-center justify-content-space-around">
+                <div class="profile-card rounded shadow">
+                    <div class="custom-title p-1 rounded-top mb-3">
                         <Typhography style="font-size: 1.5rem; color: white;">PERSONAL INFORMATION</Typhography>
                     </div>
 
                     <!-- IMAGE -->
-                    <div class="image-container">
+                    <div class="image-container d-flex justify-content-center p-1">
                         <div class="card image-card">
                             <img th:if="${userInfo.img_src != null and userInfo.img_src != ''}" th:src="@{/images/__${userInfo.img_src}__}" class="card-img-center image-file" alt="User Image">
                             <img th:if="${userInfo.img_src == null or userInfo.img_src == ''}" th:src="@{/images/MaleDefaultProfile.jpg}" class="card-img-center image-file" alt="Default Image">
@@ -22,7 +22,7 @@
                     <div class="card-body">
                         
                         <!-- PERSONAL INFO CARD -->
-                        <div class="profile-form-container">
+                        <div class="profile-form-container d-flex justify-content-center">
                             <div class="form-container">
 
                                 <div class="title-container">
@@ -37,7 +37,7 @@
                                     <input class="form-control-title p-2 bg-white text-dark title-font" type="text" value="E-mail:" aria-label="Disabled input example" disabled readonly>
                                 </div>
             
-                                <div class="value-container">
+                                <div class="value-container d-flex flex-column justify-content-center ">
                                     <input class="form-control-value p-2 bg-white text-dark value-font" type="text" aria-label="Disabled input example" disabled readonly th:if="${userInfo != null}" th:value="${userInfo.emp_id}">
                                     
                                     <input class="form-control-value p-2 bg-white text-dark value-font" type="text" aria-label="Disabled input example" disabled readonly th:if="${userInfo != null}" th:value="${userInfo.username}">
@@ -60,17 +60,17 @@
         </div>
 
         <!-- CARD 2 -->
-        <div class="card-container-emp">
-            <div class="card-container2">
+        <div class="card-container-emp  h-100 w-100 d-flex flex-column align-items-center">
+            <div class="card-container2 d-flex flex-column align-items-center justify-content-space-around ">
 
                 <!-- EMPLOYEE STATUS -->
-                <div class="employee-card" >
-                    <div class="employee-info">
+                <div class="employee-card rounded shadow" >
+                    <div class="employee-info p-1 rounded-top">
                         <Typhography style="font-size: 1.5rem; color: white;"> EMPLOYEE STATUS</Typhography>
                     </div>
 
                     <div class="card-body">
-                        <div class="employee-form-container">
+                        <div class="employee-form-container d-flex justify-content-center mt-3">
                             <div class="form-container">
 
                                 <div class="title-container">
@@ -81,7 +81,7 @@
                                     <input class="form-control-title p-2 bg-white text-dark emp-title-font" type="text" value="Roles:" aria-label="Disabled input example" disabled readonly>
                                 </div>
             
-                                <div class="emp-value-container">
+                                <div class="emp-value-container d-flex flex-column justify-content-center">
                                     <input class="form-control-value p-2 bg-white text-dark emp-value-font" type="text" aria-label="Disabled input example" disabled readonly th:if="${userInfo != null}" th:value="${userInfo.status_name}">
                                     
                                     <input class="form-control-value p-2 bg-white text-dark emp-value-font" type="text" aria-label="Disabled input example" disabled readonly th:if="${userInfo != null}" th:value="${userInfo.position_name}">
@@ -94,7 +94,7 @@
                                             </button>
                                             </h2>
                                             <div id="flush-collapseOne" class="accordion-collapse collapse emp-value-font" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">
+                                                <div class="accordion-body p-1">
                                                     <div th:each="role : ${userInfo.user_multi_role.user_multi_role}">
                                                         <span th:text="${role}"></span>
                                                         <br />
@@ -113,12 +113,12 @@
                 </div>
 
                 <!-- PROJECT LIST -->
-                <div class="project-card" >
-                    <div class="project-info">
+                <div class="project-card shadow rounded" >
+                    <div class="project-info p-1 rounded-top">
                         <Typhography style="font-size: 1.5rem; color: white;"> PROJECT LIST</Typhography>
                     </div>
 
-                        <div class="proj-list-container">
+                        <div class="proj-list-container overflow-y-auto overflow-x-hidden rounded mt-2">
                             
                             <ol class="list-group list-group-numbered">
                                 <div th:if="${projectsOfUser.isEmpty()}">

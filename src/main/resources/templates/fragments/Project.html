@@ -1,7 +1,8 @@
-<div th:fragment="Project" class="frag d-flex justify-content-center align-items-center gap-3 h-100 w-100 overflow-x-hidden overflow-y-auto">
+<div th:fragment="Project"
+    class="frag d-flex justify-content-center align-items-center gap-3 h-100 w-100 overflow-x-hidden overflow-y-auto">
     <!-- CARD 1 -->
     <div class="main-card-container1 d-flex flex-column mb-3">
-        <div class="container d-flex flex-column gap-4 h-100" >
+        <div class="container d-flex flex-column gap-4 h-100">
             <!-- PROJECT NAME -->
             <div class="project-name-container shadow rounded d-flex flex-column w-100" style="flex: 1;">
                 <div class="project-title rounded-top d-flex align-items-center w-100">
@@ -9,6 +10,7 @@
                 </div>
                 <div class="project-body w-100 d-flex justify-content-center align-items-center">
                     <Typography class="container-info" style="font-size: 2.5rem;" th:text="${projectInfo.proj_name}">
+
                     </Typography>
                 </div>
             </div>
@@ -19,7 +21,8 @@
                         <Typography class="container-title">Project code </Typography>
                     </div>
                     <div class="project-code-body d-flex align-items-center justify-content-center">
-                        <span class="container-info" style="font-weight: 600; font-size:1.5rem;" th:text="${projectInfo.proj_code}"></span>
+                        <span class="container-info" style="font-weight: 600; font-size:1.5rem;"
+                            th:text="${projectInfo.proj_code}"></span>
                     </div>
                 </div>
                 <div class="project-code-container shadow d-flex flex-column w-50 rounded">
@@ -27,25 +30,28 @@
                         <Typography class="container-title">Project status </Typography>
                     </div>
                     <div class="project-code-body d-flex align-items-center justify-content-center">
-                        <span class="container-info" style="font-weight: 600; font-size:1.5rem ; " th:text="${status.status_code}"></span>
+                        <span class="container-info" style="font-weight: 600; font-size:1.5rem ; "
+                            th:text="${status.status_code}"></span>
                     </div>
                 </div>
             </div>
             <!-- PROJECT DURATION -->
-            <div class="date-desc-container d-flex align-items-center justify-content-center w-100"  style="flex: 1;">
+            <div class="date-desc-container d-flex align-items-center justify-content-center w-100" style="flex: 1;">
                 <div class="proj-duration-container shadow rounded d-flex flex-column h-100 w-100">
                     <div class="proj-duration rounded-top w-100 d-flex align-items-center">
                         <Typography class="container-title"> Project Duration</Typography>
                     </div>
                     <div class="date-container d-flex align-items-center justify-content-center">
-                        <div class="start-date-container w-50 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <div
+                            class="start-date-container w-50 d-flex flex-column align-items-center justify-content-center gap-2">
                             <Typography style="font-weight: 600; font-size:1rem;">
                                 START DATE
                             </Typography>
                             <Typography class="container-info" th:text="${projectInfo.start_date}">
                         </div>
 
-                        <div class="end-date-container w-50 d-flex flex-column align-items-center justify-content-center gap-2">
+                        <div
+                            class="end-date-container w-50 d-flex flex-column align-items-center justify-content-center gap-2">
                             <Typography style="font-weight: 600; font-size:1rem;">
                                 END DATE
                             </Typography>
@@ -70,8 +76,8 @@
     <!-- CARD 2 -->
     <div class="main-card-container2 d-flex flex-column mb-3">
         <div class="container d-flex flex-column gap-4 h-100">
-            <div class="client-name-container d-flex flex-column w-100" style="flex: 1.2;" >
-                <div class="client-title d-flex align-items-center w-100">
+            <div class="client-name-container shadow rounded d-flex flex-column w-100 " style="flex: 1.2;">
+                <div class="client-title rounded-top d-flex align-items-center w-100">
                     <Typography class="container-title">Client </Typography>
                 </div>
                 <div class="client-body w-100 d-flex justify-content-center align-items-center">
@@ -80,16 +86,16 @@
                 </div>
             </div>
 
-            <div class="main-manager-member" style="flex: 2.5;">
-                <div class="manager-container">
-                    <div class="manager-title">
+            <div class="main-manager-member d-flex flex-row justify-content-center gap-3 " style="flex: 2.5;">
+                <div class="manager-container rounded shadow d-flex flex-column">
+                    <div class="manager-title w-100 rounded-top d-flex align-items-center">
                         <Typography class="container-title">Project Manager(s) </Typography>
                     </div>
-                    <div class="manager-body">
+                    <div class="manager-body overflow-y-auto overflow-x-hidden">
                         <!-- MANAGER LIST-->
                         <ol class="list-group list-group-numbered">
                             <div th:each="manager_name, iterStat : ${projManager}">
-                                <li class="list-group-item">
+                                <li class="list-group-item rounded p-2">
                                     <span th:text="${iterStat.count}"></span>. <span
                                         th:text="${manager_name.manager_name}"></span>
                                 </li>
@@ -97,15 +103,15 @@
                         </ol>
                     </div>
                 </div>
-                <div class="member-container">
-                    <div class="member-title">
+                <div class="member-container h-100 rounded shadow">
+                    <div class="member-title w-100 rounded-top d-flex align-items-center">
                         <Typography class="container-title">Project Member(s) </Typography>
                     </div>
-                    <div class="member-body overflow-y-auto overflow-x-hidden">
+                    <div class="member-body overflow-y-auto overflow-x-hidden p-1">
                         <!-- MEMBERS LIST -->
                         <ol class="list-group list-group-numbered">
                             <div th:each="member_name, iterStat : ${members}">
-                                <li class="list-group-item">
+                                <li class="list-group-item rounded p-2">
                                     <span th:text="${iterStat.count}"></span>. <span
                                         th:text="${member_name.member_name}"></span>
                                 </li>
@@ -116,7 +122,7 @@
             </div>
 
             <!-- DEV TYPE, DEV PHASE, TECHNOLOGY -->
-            <div class="dev-tech-container"  style="flex: 3;">
+            <div class="dev-tech-container d-flex rounded shadow" style="flex: 3;">
                 <div class="accordion" id="accordionExample" style="width: 100%;">
                     <div class="accordion-item">
                         <Typography style="font-size: 30px;" class="accordion-header" id="headingOne">
@@ -131,7 +137,8 @@
                                 <!-- LIST -->
                                 <!-- <div th:each="type:${devType}" th:text="${type.dev_type_id}"></div> -->
                                 <div class="field-info-chip-container">
-                                    <p class="field-info-chip" th:each="type:${devType}" th:text="${type.dev_type_id}"> </p>
+                                    <p class="field-info-chip" th:each="type:${devType}" th:text="${type.dev_type_id}">
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +156,8 @@
                                 <!-- LIST -->
                                 <!-- <div th:text="${#strings.arrayJoin(devPhase.![dev_phase_name], ', ')}"></div> -->
                                 <div class="field-info-chip-container">
-                                    <p class="field-info-chip" th:each="phase:${devPhase}" th:text="${phase.dev_phase_name}"> </p>
+                                    <p class="field-info-chip" th:each="phase:${devPhase}"
+                                        th:text="${phase.dev_phase_name}"> </p>
                                 </div>
                             </div>
                         </div>
@@ -169,8 +177,6 @@
                                 <div class="field-info-chip-container">
                                     <p class="field-info-chip" th:each="tech:${tech}" th:text="${tech.tech_name}"></p>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
