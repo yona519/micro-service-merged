@@ -1,52 +1,51 @@
-<div th:fragment="Project" class="frag">
+<div th:fragment="Project" class="frag d-flex justify-content-center align-items-center gap-3 h-100 w-100 overflow-x-hidden overflow-y-auto">
     <!-- CARD 1 -->
-    <div class="main-card-container1">
-        <div class="container">
+    <div class="main-card-container1 d-flex flex-column mb-3">
+        <div class="container d-flex flex-column gap-4 h-100" >
             <!-- PROJECT NAME -->
-            <div class="project-name-container" style="flex: 1;">
-                <div class="project-title">
+            <div class="project-name-container shadow rounded d-flex flex-column w-100" style="flex: 1;">
+                <div class="project-title rounded-top d-flex align-items-center w-100">
                     <Typography class="container-title">Project Name </Typography>
                 </div>
-                <div class="project-body">
+                <div class="project-body w-100 d-flex justify-content-center align-items-center">
                     <Typography class="container-info" style="font-size: 2.5rem;" th:text="${projectInfo.proj_name}">
                     </Typography>
                 </div>
             </div>
             <!-- PROJECT CODE/STATUS -->
-            <div class="project-add-ons" style="flex: 0.5;">
-                <div class="project-code-container">
-                    <div class="project-code-title">
+            <div class="project-add-ons d-flex gap-3 w-100" style="flex: 0.5;">
+                <div class="project-code-container shadow rounded d-flex flex-column w-50">
+                    <div class="project-code-title rounded-top d-flex align-items-center">
                         <Typography class="container-title">Project code </Typography>
                     </div>
-                    <div class="project-code-body">
+                    <div class="project-code-body d-flex align-items-center justify-content-center">
                         <span class="container-info" style="font-weight: 600; font-size:1.5rem;" th:text="${projectInfo.proj_code}"></span>
                     </div>
                 </div>
-                <div class="project-code-container">
-                    <div class="project-code-title">
+                <div class="project-code-container shadow d-flex flex-column w-50 rounded">
+                    <div class="project-code-title d-flex align-items-center rounded-top">
                         <Typography class="container-title">Project status </Typography>
                     </div>
-                    <div class="project-code-body">
+                    <div class="project-code-body d-flex align-items-center justify-content-center">
                         <span class="container-info" style="font-weight: 600; font-size:1.5rem ; " th:text="${status.status_code}"></span>
                     </div>
                 </div>
             </div>
-
-            <div class="date-desc-container" style="flex: 1;">
-                <!-- PROJECT DURATION -->
-                <div class="proj-duration-container">
-                    <div class="proj-duration">
+            <!-- PROJECT DURATION -->
+            <div class="date-desc-container d-flex align-items-center justify-content-center w-100"  style="flex: 1;">
+                <div class="proj-duration-container shadow rounded d-flex flex-column h-100 w-100">
+                    <div class="proj-duration rounded-top w-100 d-flex align-items-center">
                         <Typography class="container-title"> Project Duration</Typography>
                     </div>
-                    <div class="date-container">
-                        <div class="start-date-container">
+                    <div class="date-container d-flex align-items-center justify-content-center">
+                        <div class="start-date-container w-50 d-flex flex-column align-items-center justify-content-center gap-2">
                             <Typography style="font-weight: 600; font-size:1rem;">
                                 START DATE
                             </Typography>
                             <Typography class="container-info" th:text="${projectInfo.start_date}">
                         </div>
 
-                        <div class="end-date-container">
+                        <div class="end-date-container w-50 d-flex flex-column align-items-center justify-content-center gap-2">
                             <Typography style="font-weight: 600; font-size:1rem;">
                                 END DATE
                             </Typography>
@@ -57,11 +56,11 @@
             </div>
 
             <!-- DESCRIPTION -->
-            <div class="main-desc-container" style="flex: 2;">
-                <div class="desc-title">
+            <div class="main-desc-container shadow w-100 d-flex flex-column rounded" style="flex: 2;">
+                <div class="desc-title w-100 d-flex align-items-center rounded-top">
                     <Typography class="container-title"> Project Description</Typography>
                 </div>
-                <div class="desc-body">
+                <div class="desc-body w-100 overflow-x-hidden overflow-y-auto">
                     <div style="font-size: 1.5rem; padding: 10px;" th:text="${projectInfo.proj_desc}"></div>
                 </div>
             </div>
@@ -69,13 +68,13 @@
     </div>
 
     <!-- CARD 2 -->
-    <div class="main-card-container2">
-        <div class="container">
-            <div class="client-name-container" style="flex: 1.2;">
-                <div class="client-title">
+    <div class="main-card-container2 d-flex flex-column mb-3">
+        <div class="container d-flex flex-column gap-4 h-100">
+            <div class="client-name-container d-flex flex-column w-100" style="flex: 1.2;" >
+                <div class="client-title d-flex align-items-center w-100">
                     <Typography class="container-title">Client </Typography>
                 </div>
-                <div class="client-body">
+                <div class="client-body w-100 d-flex justify-content-center align-items-center">
                     <Typography class="container-info" style="font-size: 2.5rem;" th:text="${clientName.client_name}">
                     </Typography>
                 </div>
@@ -102,7 +101,7 @@
                     <div class="member-title">
                         <Typography class="container-title">Project Member(s) </Typography>
                     </div>
-                    <div class="member-body">
+                    <div class="member-body overflow-y-auto overflow-x-hidden">
                         <!-- MEMBERS LIST -->
                         <ol class="list-group list-group-numbered">
                             <div th:each="member_name, iterStat : ${members}">
