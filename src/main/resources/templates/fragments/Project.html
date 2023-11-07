@@ -59,7 +59,7 @@
                         </div> -->
                         <div class="start-date-container w-50 d-flex flex-column align-items-center justify-content-center gap-2">
                             <Typography style="font-weight: 600; font-size:1rem;">
-                                START DATE
+                                Start date
                             </Typography>
                             <div class="container-info" th:with="formattedStartDate=${#dates.format(projectInfo.start_date, 'MMMM dd, yyyy')}">
                                 <Typography th:text="${formattedStartDate}"></Typography>
@@ -68,7 +68,7 @@
                         
                         <div class="end-date-container w-50 d-flex flex-column align-items-center justify-content-center gap-2">
                             <Typography style="font-weight: 600; font-size:1rem;">
-                                END DATE
+                                End date
                             </Typography>
                             <div class="container-info" th:with="formattedEndDate=${#dates.format(projectInfo.end_date, 'MMMM dd, yyyy')}">
                                 <Typography th:text="${formattedEndDate}"></Typography>
