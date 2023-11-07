@@ -30,7 +30,7 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/userlogin")
+    @GetMapping("/loginUser")
     public String userloginPage() {
         return "loginUser";
     }
@@ -53,20 +53,23 @@ public class AuthController {
             return "redirect:/user/" + principal.getEmp_id();
 
         } else {
-            if (user == null) {
+            if (username.isEmpty() && password.isEmpty()) {
                 // Username doesn't exist
-                model.addAttribute("usernameNotFound", true);
+                model.addAttribute("missingFields", "Enter your email and password");
+            } else if (user == null) {
+                // Both fields empty
+                model.addAttribute("usernameNotFound", "Invalid Username");
             } else if (user != null && !response.isSuccess()) {
                 // Incorrect password
-                model.addAttribute("incorrectPassword", true);
-            } else if (username.isEmpty() || password.isEmpty() && !response.isSuccess()) {
-                // Missing input
-                model.addAttribute("missingInput", true);
-            } else {
-                // Handle other cases if needed
-                return "loginUser";
+                model.addAttribute("incorrectPassword", "Invalid Password");
+            } else if (username.isEmpty()) {
+                // Username is empty
+                model.addAttribute("missingUsername", "Enter your email");
+            } else if (password.isEmpty()) {
+                // Password is empty
+                model.addAttribute("missingPassword", "Enter your password");
             }
-
+    
             return "loginUser";
         }
     }
