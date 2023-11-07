@@ -61,7 +61,7 @@
                             <Typography style="font-weight: 600; font-size:1rem;">
                                 Start date
                             </Typography>
-                            <div class="container-info" th:with="formattedStartDate=${#dates.format(projectInfo.start_date, 'MMMM dd, yyyy')}">
+                            <div class="container-info-date" th:with="formattedStartDate=${#dates.format(projectInfo.start_date, 'MMMM dd, yyyy')}">
                                 <Typography th:text="${formattedStartDate}"></Typography>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                             <Typography style="font-weight: 600; font-size:1rem;">
                                 End date
                             </Typography>
-                            <div class="container-info" th:with="formattedEndDate=${#dates.format(projectInfo.end_date, 'MMMM dd, yyyy')}">
+                            <div class="container-info-date" th:with="formattedEndDate=${#dates.format(projectInfo.end_date, 'MMMM dd, yyyy')}">
                                 <Typography th:text="${formattedEndDate}"></Typography>
                             </div>
                         </div>
