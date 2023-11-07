@@ -23,15 +23,26 @@ public class AuthServiceImpl implements AuthService{
 
     @Override
     public AuthResponse authUser(String username, String password) {
-        UserOutput user = userDao.getByUsername(username);
-        String hashedPassword = user.getPassword();
         AuthResponse response = new AuthResponse();
-        
-        if (user != null && bCryptPasswordEncoder.matches(password, hashedPassword)) {
-            response.setSuccess(true);
-        } else {
+
+        if (username.isEmpty() || password.isEmpty()) {
             response.setSuccess(false);
-            response.setErrorMessage("Incorrect password.");
+            response.setErrorMessage("Missing input.");
+        } else {
+            UserOutput user = userDao.getByUsername(username);
+
+            if (user != null) {
+                String hashedPassword = user.getPassword();
+                if (bCryptPasswordEncoder.matches(password, hashedPassword)) {
+                    response.setSuccess(true);
+                } else {
+                    response.setSuccess(false);
+                    response.setErrorMessage("Incorrect password.");
+                }
+            } else {
+                response.setSuccess(false);
+                response.setErrorMessage("Username not found.");
+            }
         }
         return response;
     }
@@ -45,3 +56,4 @@ public class AuthServiceImpl implements AuthService{
     }
 
 }
+

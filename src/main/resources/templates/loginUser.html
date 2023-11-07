@@ -34,17 +34,26 @@
                         <form th:action="@{/loginUser}" method="post">
                             <div class="form-group first mb-3">
                                 <label for="username">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" autocomplete="off" required>
+                                <input type="text" class="form-control" id="username" name="username" autocomplete="off">
 
                             </div>
                             <div class="form-group last mb-3">
                                 <label for="password">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password" name="password">
 
                             </div>
+                            
+                            <!-- Add a section for error messages -->
+                            <div class="mb-2 text-center" style="font-size: 16px;font-weight: bold; color: red;">
+                                <div th:if="${usernameNotFound}" class="error">Username doesn't exist</div>
+                                <div th:if="${incorrectPassword}" class="error">Incorrect password</div>
+                                <div th:if="${missingInput}" class="error">Missing Input</div>
+                            </div>
+                                
                             <div class="logbutton d-flex">
                                 <button class="btn col-md-12" type="submit">Login</button>
                             </div>
+
 
                         </form>
                         <div class="loader"></div>
@@ -72,12 +81,12 @@
                         <form th:action="@{/loginUser}" method="post">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <input type="text" class="form-control" id="username" name="username">
                             </div>
 
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password" name="password">
                             </div>
 
                             <button class="btn btn-primary col-md-12" type="submit">Login</button>

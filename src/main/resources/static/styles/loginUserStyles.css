@@ -160,8 +160,8 @@ h2 {
     font-weight: bold;
     display: flex!important;
     justify-content: center;
-    background-color: rgb(56, 179, 103);
-    border-color: rgb(56, 179, 103);
+    background-color: rgb(56, 134, 179);
+    /* border-color: rgb(56, 179, 103); */
     border-radius: 50px;
     height: 60px;
 }
@@ -176,8 +176,8 @@ h2 {
 
 .half .btn:hover {
   height: 60px;
-  background-color: rgb(23, 110, 81);
-  border-color: rgb(23, 110, 81);
+  background-color: #19507D;
+  border-color:  #19507D;
   color: white;
 }
 
