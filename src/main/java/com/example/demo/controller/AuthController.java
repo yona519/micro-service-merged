@@ -56,18 +56,18 @@ public class AuthController {
             if (username.isEmpty() && password.isEmpty()) {
                 // Username doesn't exist
                 model.addAttribute("missingFields", "Enter your email and password");
-            } else if (user == null) {
-                // Both fields empty
-                model.addAttribute("usernameNotFound", "Invalid Username");
-            } else if (user != null && !response.isSuccess()) {
-                // Incorrect password
-                model.addAttribute("incorrectPassword", "Invalid Password");
             } else if (username.isEmpty()) {
                 // Username is empty
                 model.addAttribute("missingUsername", "Enter your email");
             } else if (password.isEmpty()) {
                 // Password is empty
                 model.addAttribute("missingPassword", "Enter your password");
+            } else if (user == null) {
+                // Both fields empty
+                model.addAttribute("usernameNotFound", "Invalid Username");
+            } else if (user != null && !response.isSuccess()) {
+                // Incorrect password
+                model.addAttribute("incorrectPassword", "Invalid Password");
             }
     
             return "loginUser";
