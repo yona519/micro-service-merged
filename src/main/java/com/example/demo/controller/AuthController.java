@@ -30,7 +30,7 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/userlogin")
+    @GetMapping("/loginUser")
     public String userloginPage() {
         return "loginUser";
     }
