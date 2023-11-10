@@ -223,12 +223,14 @@
     <!-- getAllProjectsOfUser --> 
 
     <select id="getAllProjectsOfUser" parameterType="java.lang.String" resultType="com.example.demo.model.ProjectInvolved">
-        SELECT projects.proj_id AS proj_id, 
-               projects.proj_name AS proj_name
-          FROM tbl_project_mst AS projects
-        INNER JOIN tbl_user_project AS tup
-            ON tup.proj_id = projects.proj_id
-         WHERE tup.emp_id = #{emp_id};
+        SELECT DISTINCT projects.proj_id AS proj_id, 
+                        projects.proj_name AS proj_name
+        FROM tbl_project_mst AS projects
+        LEFT JOIN tbl_user_project AS tup ON tup.proj_id = projects.proj_id
+        LEFT JOIN tbl_proj_manager AS tpm ON tpm.proj_id = projects.proj_id
+        WHERE tup.emp_id = #{emp_id} OR tpm.emp_id = #{emp_id};
+
+
     </select>
     
     </mapper>
